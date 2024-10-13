@@ -12,7 +12,7 @@ const ImageMain = () => {
     const interval = setInterval(() => {
       setFade(true);
       setTimeout(() => {
-        setIndex(Math.floor(Math.random() * homeImages.length));
+        setIndex((prevIndex) => (prevIndex + 1) % homeImages.length);
         setFade(false);
       }, 500);
     }, 7000);
@@ -26,7 +26,7 @@ const ImageMain = () => {
   return (
     <div
       className={`transition-opacity duration-500 ${
-        fade ? "opacity-0" : "opacity-100"
+        fade ? "opacity-30" : "opacity-100"
       }`}
     >
       <Image
