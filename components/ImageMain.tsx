@@ -5,14 +5,37 @@ import homeImages from "@/constants/homeImages";
 import { useEffect, useState } from "react";
 
 const ImageMain = () => {
-  const [index, setIndex] = useState<number | undefined>(undefined);
+  const [index, setIndex] = useState(12);
+  const [fade, setFade] = useState<boolean>(false);
 
-  useEffect(() => setIndex(Math.floor(Math.random() * homeImages.length)), []);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFade(true);
+      setTimeout(() => {
+        setIndex(Math.floor(Math.random() * homeImages.length));
+        setFade(false);
+      }, 500);
+    }, 7000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   if (index === undefined) return null;
   const image = homeImages[index];
+
   return (
-    <Image src={image} alt="Site em construção" width={400} height={400} />
+    <div
+      className={`transition-opacity duration-500 ${
+        fade ? "opacity-0" : "opacity-100"
+      }`}
+    >
+      <Image
+        src={image}
+        alt="transições. china, 2012."
+        width={800}
+        height={800}
+      />
+    </div>
   );
 };
 
