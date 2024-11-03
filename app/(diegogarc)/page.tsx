@@ -1,5 +1,4 @@
-import About from "@/components/About";
-import VideoMain from "@/components/VideoMain";
+import VideoMain from "@/components/Reel";
 
 export default function Home() {
   return (
