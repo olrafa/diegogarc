@@ -21,5 +21,6 @@ export const bioType = defineType({
       title: "ES",
       type: "text",
     },
+    { name: "image", title: "Imagem", type: "image" },
   ],
 });
