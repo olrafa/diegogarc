@@ -1,17 +1,28 @@
 import { client } from "@/sanity/lib/client";
+import { urlFor } from "@/sanity/lib/image";
 import { groq } from "next-sanity";
+import Image from "next/image";
+import { getImageDimensions } from "@sanity/asset-utils";
 
 const Bio = async () => {
-  const bio = groq`*[_type == "bio"][0]`;
-  const aa = await client.fetch(bio);
-  console.log(aa);
-  const { pt, image } = aa;
+  const bio = groq`*[_type == "bio"]{
+    pt, "image": {"url": image.asset->url}}[0]`;
+  const {
+    pt,
+    image: { url: imgSrc },
+  } = await client.fetch(bio, {}, { cache: "no-store" });
 
-  console.log(image);
+  const { width, height } = getImageDimensions(imgSrc);
 
   return (
-    <main className="w-full flex-col items-center justify-between p-4 mt-12">
-      <div className="w-full md:w-4/5">{pt}</div>
+    <main className="w-full flex flex-col p-4 pt-12 gap-8 lg:w-2/3 2xl:w-3/5">
+      <Image
+        src={imgSrc}
+        alt="Diego Garc"
+        width={width / 2}
+        height={height / 2}
+      />
+      <div>{pt}</div>
     </main>
   );
 };
