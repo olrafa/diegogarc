@@ -2,10 +2,12 @@ import Link from "next/link";
 import DiegoIcon from "./DiegoIcon";
 
 const Navigation = () => (
-  <aside className="w-1/4 flex flex-col p-4 h-screen mt-12">
-    <nav>
-      <DiegoIcon />
-      <ul>
+  <aside className="w-1/4 flex flex-col h-screen p-12">
+    <nav className="flex flex-col gap-12">
+      <Link href="/">
+        <DiegoIcon />
+      </Link>
+      <ul className="flex flex-col gap-4 uppercase">
         <li>
           <Link href="/">Reel</Link>
         </li>

@@ -1,7 +1,7 @@
 const DiegoIcon = () => (
   <div>
-    <h1>Diego Garc_</h1>
-    <p>direção de fotografia</p>
+    <h1 className="font-bold uppercase text-xl tracking-widest">Diego Garc_</h1>
+    <p className="tracking-wide">direção de fotografia</p>
   </div>
 );
 
