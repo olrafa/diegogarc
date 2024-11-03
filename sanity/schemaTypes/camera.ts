@@ -13,7 +13,7 @@ export const cameraType = defineType({
     {
       name: "description",
       title: "Descrição",
-      type: "string",
+      type: "text",
     },
     {
       name: "order",

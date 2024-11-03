@@ -13,7 +13,7 @@ export const photographyType = defineType({
     {
       name: "description",
       title: "Descrição",
-      type: "string",
+      type: "text",
     },
     {
       name: "order",
