@@ -1,8 +1,8 @@
 import { client } from "@/sanity/lib/client";
-import { urlFor } from "@/sanity/lib/image";
 import { groq } from "next-sanity";
 import Image from "next/image";
 import { getImageDimensions } from "@sanity/asset-utils";
+import ContactCard from "@/components/contact/ContactCard";
 
 const Bio = async () => {
   const bio = groq`*[_type == "bio"]{
@@ -23,6 +23,7 @@ const Bio = async () => {
         height={height / 2}
       />
       <div>{pt}</div>
+      <ContactCard />
     </main>
   );
 };

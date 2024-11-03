@@ -3,8 +3,10 @@ import { Noto_Sans } from "next/font/google";
 import "../globals.css";
 import Navigation from "@/components/navigation/Navigation";
 import localFont from "next/font/local";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
 
-const noto = Noto_Sans({ subsets: ["latin"] });
+config.autoAddCss = false;
 
 const helveticaNeue = localFont({
   src: [
