@@ -3,11 +3,8 @@ import VideoMain from "@/components/VideoMain";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-4 pt-2 gap-12 mb-24">
+    <main className="w-full flex-col items-center justify-between p-4 mt-12">
       <VideoMain />
-      <div className="w-full px-4 md:p-12">
-        <About />
-      </div>
     </main>
   );
 }

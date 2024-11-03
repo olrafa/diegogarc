@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans } from "next/font/google";
 import "../globals.css";
-import Header from "@/components/Header";
+import Navigation from "@/components/navigation/Navigation";
 
 const noto = Noto_Sans({ subsets: ["latin"] });
 
@@ -17,8 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={noto.className}>
-        <Header /> {children}
+      <body className={`${noto.className} flex min-h-screen bg-mainBg`}>
+        <Navigation />
+        {children}
       </body>
     </html>
   );
