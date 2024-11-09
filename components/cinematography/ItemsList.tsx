@@ -14,6 +14,7 @@ const ItemsList = ({ items }: ItemsListProps) => (
       if (!header) return null;
       const imgSrc = getImageUrl(header);
       const { width, height } = getImageDimensions(imgSrc);
+      console.log(slug)
       return (
         <div key={id}>
           <Link href={`/direcao-de-fotografia/${slug}`}>
