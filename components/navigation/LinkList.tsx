@@ -15,15 +15,15 @@ const LinkList = () => {
       href: "/",
       text: "Reel",
     },
-/*     {
+    {
       href: "/direcao-de-fotografia",
       text: "Direção de fotografia",
     },
-    {
+    /*     {
       href: "/operacao-de-camera",
       text: "Operação de câmera",
     }, */
-/*     {
+    /*     {
       href: "/bio",
       text: "Bio",
     }, */
