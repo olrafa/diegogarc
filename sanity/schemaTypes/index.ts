@@ -13,4 +13,8 @@ const schemaTypes = [
   contactType,
 ];
 
+export const schema: { types: SchemaTypeDefinition[] } = {
+  types: schemaTypes,
+};
+
 export default schemaTypes;

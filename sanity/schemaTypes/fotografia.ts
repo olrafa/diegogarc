@@ -21,6 +21,13 @@ export const photographyType = defineType({
       description: "Em qual ordem aparece na lista de trabalhos",
       type: "number",
     },
+    {
+      name: "slug",
+      title: "Nome do link",
+      type: "slug",
+      description: "O link da página vai ser '/direcao-de-fotografia/[valor]'",
+      options: { source: "title" },
+    },
     { name: "header", title: "Imagem de capa", type: "image" },
     {
       name: "gallery",

@@ -89,6 +89,13 @@ export interface Cinematography extends SanityDocument {
   order?: number;
 
   /**
+   * Nome do link — `slug`
+   *
+   * O link da página vai ser '/direcao-de-fotografia/[valor]'
+   */
+  slug?: { _type: "slug"; current: string };
+
+  /**
    * Imagem de capa — `image`
    *
    *
