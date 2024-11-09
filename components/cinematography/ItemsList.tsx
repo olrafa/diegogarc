@@ -10,13 +10,14 @@ type ItemsListProps = {
 
 const ItemsList = ({ items }: ItemsListProps) => (
   <div className="flex flex-col gap-4 w-full">
-    {items.map(({ title = "", header, slug, _id: id }) => {
+    {items.map(({ title = "", header, slug = { current: "" }, _id: id }) => {
       if (!header) return null;
       const imgSrc = getImageUrl(header);
       const { width, height } = getImageDimensions(imgSrc);
+      const link = slug.current;
       return (
         <div key={id}>
-          <Link href={`/direcao-de-fotografia/${slug}`}>
+          <Link href={`/direcao-de-fotografia/${link}`}>
             <Image src={imgSrc} width={width} height={height} alt={title} />
           </Link>
         </div>

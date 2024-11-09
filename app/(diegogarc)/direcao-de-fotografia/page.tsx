@@ -9,6 +9,7 @@ const CinematographyPage = async () => {
    | order(order asc) {
     title, 
     header, 
+    slug,
     _id
     }
   `;
