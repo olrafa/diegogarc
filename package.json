@@ -12,6 +12,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@sanity/image-url": "^1.1.0",
     "@sanity/vision": "^3.62.3",
     "next": "14.2.4",
     "next-sanity": "^9.8.8",
@@ -27,6 +28,8 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
     "postcss": "^8",
+    "prettier": "^2.8.8",
+    "sanity-codegen": "^0.9.8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }

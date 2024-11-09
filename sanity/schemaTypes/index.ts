@@ -5,6 +5,16 @@ import { cameraType } from "./camera";
 import { bioType } from "./bio";
 import { contactType } from "./contact";
 
+const schemaTypes = [
+  reelType,
+  photographyType,
+  cameraType,
+  bioType,
+  contactType,
+];
+
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [reelType, photographyType, cameraType, bioType, contactType],
+  types: schemaTypes,
 };
+
+export default schemaTypes;
