@@ -24,9 +24,45 @@ const helveticaNeue = localFont({
   variable: "--font-helvetica-neue",
 });
 
+const url = "https://diegogarc.com";
+const title = "Diego Garc";
+
 export const metadata: Metadata = {
-  title: "Diego Garc",
-  description: "Site em construção",
+  title: {
+    template: `%s | ${title}`,
+    default: title,
+  },
+  creator: "Diego Garc",
+  description: "Direção de fotografia e operação de câmera de cinema",
+  keywords: [
+    "direção de fotografia",
+    "operação de câmera",
+    "cinematografia",
+    "cinema",
+    "Diego Garc",
+  ],
+  metadataBase: new URL(url),
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    siteName: "Diego Garc",
+    url,
+    title,
+    description: "Direção de fotografia e operação de câmera de cinema",
+    images: [
+      {
+        url: `${url}/og-image.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Diego Garc",
+      },
+    ],
+  },
+  icons: {
+    icon: "/favicon.jpg",
+    shortcut: "/favicon.jpg",
+    apple: "/favicon.jpg",
+  }
 };
 
 export default function RootLayout({
