@@ -8,9 +8,10 @@ const CinematographyPage = async () => {
   *[_type == "cinematography" && defined(header) && defined(description) && defined(gallery)]
    | order(order asc) {
     title, 
-    header, 
+    header,
+    description,
     slug,
-    _id
+    _id,
     }
   `;
 
