@@ -12,7 +12,7 @@ const Reel = async () => {
   );
 
   return (
-    <div className="w-full flex justify-center px-12">
+    <div className="w-full max-w-7xl flex justify-center px-2">
       <iframe
         title={VIMEO.title}
         className="w-full aspect-video rounded"
