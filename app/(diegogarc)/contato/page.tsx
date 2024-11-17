@@ -5,6 +5,7 @@ import { getImageDimensions } from "@sanity/asset-utils";
 import ContactCard from "@/components/contact/ContactCard";
 import { metadata } from "../layout";
 import { Metadata } from "next";
+import BioText from "@/components/bio/BioText";
 
 export async function generateMetadata(): Promise<Metadata | null> {
   return {
@@ -19,9 +20,10 @@ export async function generateMetadata(): Promise<Metadata | null> {
 
 const ContactPage = async () => {
   const bio = groq`*[_type == "bio"]{
-    pt, "image": {"url": image.asset->url}}[0]`;
+    pt, es, "image": {"url": image.asset->url}}[0]`;
   const {
     pt,
+    es,
     image: { url: imgSrc },
   } = await client.fetch(bio, {}, { cache: "no-store" });
 
@@ -35,7 +37,7 @@ const ContactPage = async () => {
         width={width / 2}
         height={height / 2}
       />
-      <div>{pt}</div>
+      <BioText regularText={pt} translationText={es} />
       <ContactCard />
     </main>
   );
