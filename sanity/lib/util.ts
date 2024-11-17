@@ -23,16 +23,3 @@ export const getImageUrl = (image: ItemImage): string => {
   // Generate the URL using the builder
   return builder.image(image.asset).url() || "";
 };
-
-export const cleanDescription = (title: string, description: string) => {
-  const [firstPart, ...rest] = description
-    .split("|")
-    .map((part) => part.trim());
-
-  // Check if the first part of the description matches the title (case-insensitive)
-  if (firstPart.trim().toLowerCase() === title.trim().toLowerCase()) {
-    return ` | ${rest.join(" | ").trim()}`; // Return the description starting with the first pipe
-  }
-
-  return description; // Return original description if no match
-};
