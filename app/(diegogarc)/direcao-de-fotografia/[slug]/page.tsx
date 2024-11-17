@@ -1,5 +1,5 @@
-import ItemGallery from "@/components/cinematography/ItemGallery";
-import ItemHeader from "@/components/cinematography/ItemHeader";
+import Gallery from "@/components/cinematography/Gallery";
+import Header from "@/components/cinematography/Header";
 import { client } from "@/sanity/lib/client";
 import { Cinematography } from "@/types/sanity-types";
 import { groq } from "next-sanity";
@@ -21,8 +21,8 @@ const CinematographyItemPage = async ({
 
   return (
     <main className="w-full flex-col items-center justify-between p-4 mt-6">
-      <ItemHeader title={title} description={description} />
-      <ItemGallery gallery={gallery} />
+      <Header title={title} description={description} />
+      <Gallery gallery={gallery} />
     </main>
   );
 };

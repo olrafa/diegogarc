@@ -3,11 +3,11 @@ import { CameraWithPage } from "@/types/additionalTypes";
 import Image from "next/image";
 import Link from "next/link";
 
-type CameraGalleryItemProps = {
+type PosterProps = {
   item: CameraWithPage;
 };
 
-const CameraGalleryItem = ({ item }: CameraGalleryItemProps) => {
+const Poster = ({ item }: PosterProps) => {
   const { title, description, page, poster } = item;
   if (!poster) return null;
 
@@ -41,4 +41,4 @@ const CameraGalleryItem = ({ item }: CameraGalleryItemProps) => {
   );
 };
 
-export default CameraGalleryItem;
+export default Poster;

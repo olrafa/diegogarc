@@ -1,4 +1,4 @@
-import CameraGalleryItem from "@/components/camera/GalleryItem";
+import Poster from "@/components/camera/Poster";
 import { client } from "@/sanity/lib/client";
 import { CameraWithPage } from "@/types/additionalTypes";
 
@@ -26,7 +26,7 @@ const CameraPage = async () => {
     <main className="mb-4">
       <div className="flex flex-row gap-2 m-2 flex-wrap">
         {resultList.map((item) => (
-          <CameraGalleryItem item={item} key={item._id} />
+          <Poster item={item} key={item._id} />
         ))}
       </div>
     </main>

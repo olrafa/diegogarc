@@ -1,4 +1,4 @@
-import ItemsList from "@/components/cinematography/ItemsList";
+import List from "@/components/cinematography/List";
 import { client } from "@/sanity/lib/client";
 import { Cinematography } from "@/types/sanity-types";
 import { groq } from "next-sanity";
@@ -22,7 +22,7 @@ const CinematographyPage = async () => {
 
   return (
     <main className="w-full flex-col items-center justify-between p-4">
-      <ItemsList items={resultList} />
+      <List items={resultList} />
     </main>
   );
 };

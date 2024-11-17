@@ -3,11 +3,11 @@ import { Cinematography } from "@/types/sanity-types";
 import { getImageDimensions } from "@sanity/asset-utils";
 import Image from "next/image";
 
-type ItemGalleryProps = {
+type GalleryProps = {
   gallery: Cinematography["gallery"];
 };
 
-const ItemGallery = ({ gallery = [] }: ItemGalleryProps) => (
+const Gallery = ({ gallery = [] }: GalleryProps) => (
   <div className="mt-2 flex flex-col gap-4">
     {gallery.map((item) => {
       const imgSrc = getImageUrl(item);
@@ -25,4 +25,4 @@ const ItemGallery = ({ gallery = [] }: ItemGalleryProps) => (
   </div>
 );
 
-export default ItemGallery;
+export default Gallery;
