@@ -1,17 +1,26 @@
 import CameraGalleryItem from "@/components/camera/GalleryItem";
 import { client } from "@/sanity/lib/client";
-import { Camera } from "@/types/sanity-types";
+import { CameraWithPage } from "@/types/additionalTypes";
+
 import { groq } from "next-sanity";
 
 const CameraPage = async () => {
-  const camera = groq`*[_type == "camera"]
-   | order(order asc)`;
+  const camera = groq`
+  *[_type == "camera"] | order(order asc) {
+    _id,
+    title,
+    description,
+    poster,
+    page->{
+      "slug": slug.current
+    }
+  }`;
 
   const resultList = (await client.fetch(
     camera,
     {},
     { cache: "no-store" }
-  )) as Camera[];
+  )) as CameraWithPage[];
 
   return (
     <main className="mb-4">
