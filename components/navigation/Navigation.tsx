@@ -3,7 +3,7 @@ import DiegoIcon from "./DiegoIcon";
 import LinkList from "./LinkList";
 
 const Navigation = () => (
-  <aside className="w-1/3 lg:w-1/4 flex flex-col h-screen p-12">
+  <aside className="w-full max-w-80 flex flex-col h-screen py-12 px-8">
     <nav className="flex flex-col gap-12">
       <Link href="/">
         <DiegoIcon />
