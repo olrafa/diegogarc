@@ -3,8 +3,21 @@ import { groq } from "next-sanity";
 import Image from "next/image";
 import { getImageDimensions } from "@sanity/asset-utils";
 import ContactCard from "@/components/contact/ContactCard";
+import { metadata } from "../layout";
+import { Metadata } from "next";
 
-const Bio = async () => {
+export async function generateMetadata(): Promise<Metadata | null> {
+  return {
+    ...metadata,
+    title: "Contato",
+    alternates: {
+      canonical: "https://diegogarc.com/contato",
+    },
+    openGraph: { ...metadata.openGraph, title: "Contato | Diego Garc" },
+  };
+}
+
+const ContactPage = async () => {
   const bio = groq`*[_type == "bio"]{
     pt, "image": {"url": image.asset->url}}[0]`;
   const {
@@ -28,4 +41,4 @@ const Bio = async () => {
   );
 };
 
-export default Bio;
+export default ContactPage;

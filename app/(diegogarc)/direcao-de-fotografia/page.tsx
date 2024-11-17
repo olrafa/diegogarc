@@ -1,7 +1,23 @@
 import List from "@/components/cinematography/List";
 import { client } from "@/sanity/lib/client";
 import { Cinematography } from "@/types/sanity-types";
+import { Metadata } from "next";
 import { groq } from "next-sanity";
+import { metadata } from "../layout";
+
+export async function generateMetadata(): Promise<Metadata | null> {
+  return {
+    ...metadata,
+    title: "Direção de fotografia",
+    alternates: {
+      canonical: "https://diegogarc.com/direcao-de-fotografia",
+    },
+    openGraph: {
+      ...metadata.openGraph,
+      title: "Direção de fotografia | Diego Garc",
+    },
+  };
+}
 
 const CinematographyPage = async () => {
   const cinematography = groq`
