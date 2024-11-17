@@ -14,7 +14,7 @@ const Poster = ({ item }: PosterProps) => {
   const imgSrc = getImageUrl(poster);
 
   return (
-    <div className="relative group h-80 w-60 flex-shrink-0 overflow-hidden border-2 border-transparent transition-all duration-300">
+    <div className="relative group h-60 lg:h-80 lg:w-60 flex-shrink-0 overflow-hidden border-2 border-transparent transition-all duration-300">
       {/* Image */}
       <Image
         src={imgSrc}

@@ -20,7 +20,7 @@ const CinematographyItemPage = async ({
   const { title, description, gallery } = work;
 
   return (
-    <main className="w-full flex-col items-center justify-between p-4 mt-6">
+    <main className="w-full flex-col items-center justify-between p-4 lg:mt-6">
       <Header title={title} description={description} />
       <Gallery gallery={gallery} />
     </main>

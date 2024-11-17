@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${helveticaNeue.className} flex min-h-screen bg-mainBg text-mainText`}
+        className={`${helveticaNeue.className} flex flex-col lg:flex-row lg:min-h-screen bg-mainBg text-mainText`}
       >
         <Navigation />
         {children}
