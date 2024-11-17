@@ -8,18 +8,21 @@ type GalleryProps = {
 };
 
 const Gallery = ({ gallery = [] }: GalleryProps) => (
-  <div className="mt-2 flex flex-col gap-4">
+  <div className="mt-2 flex flex-row flex-wrap gap-4">
     {gallery.map((item) => {
       const imgSrc = getImageUrl(item);
-      const { width, height } = getImageDimensions(imgSrc);
+      const { width, height } = getImageDimensions(item);
       return (
-        <Image
-          alt={item._key}
-          key={item._key}
-          src={imgSrc}
-          width={width}
-          height={height}
-        />
+        <div key={item._key} className="w-full max-w-5xl">
+          <Image
+            alt={item._key}
+            src={imgSrc}
+            width={width}
+            height={height}
+            className="object-cover w-full h-auto"
+            priority
+          />
+        </div>
       );
     })}
   </div>
