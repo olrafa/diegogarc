@@ -39,7 +39,7 @@ const LinkList = () => {
     <ul className="flex text-xs lg:text-base lg:flex-col gap-4 uppercase justify-between">
       {linkList.map(({ href, text, mobile }) => (
         <li key={href} className={isActive(href)}>
-            <Link href={href}>
+            <Link href={href} prefetch={false}>
             {/* Desktop Text */}
             <span className="hidden lg:inline">{text}</span>
             {/* Mobile Text */}

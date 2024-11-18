@@ -35,7 +35,7 @@ const List = ({ items }: ListProps) => (
               priority
             />
 
-            <Link href={`/direcao-de-fotografia/${link}`}>
+            <Link href={`/direcao-de-fotografia/${link}`} prefetch={false}>
               <div className="absolute inset-0 bg-black/90 p-8 text-center text-balance text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 {description}
               </div>
