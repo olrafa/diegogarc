@@ -2,6 +2,8 @@ import { VIMEO } from "@/constants/links";
 import { client } from "@/sanity/lib/client";
 import { groq } from "next-sanity";
 
+export const revalidate = 3600 * 24 * 7;
+
 export default async function Home() {
   const latestReel = groq`*[_type == "reel"] | order(year desc)[0]`;
   const { video } = await client.fetch(latestReel);
