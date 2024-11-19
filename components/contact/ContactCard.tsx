@@ -22,7 +22,9 @@ const ContactCard = async () => {
   return (
     <div className="w-full flex-col items-center justify-between">
       <div>
-        <p>{email}</p>
+        <Link href={`mailto:${email}`}>
+          <p>{email}</p>
+        </Link>
         <p>{phone}</p>
       </div>
 
@@ -37,12 +39,7 @@ const ContactCard = async () => {
           <FontAwesomeIcon icon={faVimeo} size={iconSize} />
         </Link>
         <Link target="_blank" href={abcine}>
-          <Image
-            src={abcineImg}
-            alt="abcine"
-            height={50}
-            width={200}
-          />
+          <Image src={abcineImg} alt="abcine" height={50} width={200} />
         </Link>
         <Link target="_blank" href={instagram} className="mt-3">
           <FontAwesomeIcon icon={faInstagram} size={iconSize} />
