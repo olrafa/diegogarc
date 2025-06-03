@@ -6,11 +6,15 @@ import { Metadata } from "next";
 import { groq } from "next-sanity";
 import { metadata } from "../../layout";
 
-type CinematographyItemPageProps = { params: { slug: string } };
+type CinematographyItemPageProps = { params: Promise<{ slug: string }> };
 
-export async function generateMetadata({
-  params: { slug },
-}: CinematographyItemPageProps): Promise<Metadata | null> {
+export async function generateMetadata(props: CinematographyItemPageProps): Promise<Metadata | null> {
+  const params = await props.params;
+
+  const {
+    slug
+  } = params;
+
   const metadataQuery = groq`*[_type == "cinematography" && slug.current == $slug][0]{ title, description }`;
   const { title, description } = (await client.fetch(
     metadataQuery,
@@ -32,9 +36,13 @@ export async function generateMetadata({
   };
 }
 
-const CinematographyItemPage = async ({
-  params: { slug },
-}: CinematographyItemPageProps) => {
+const CinematographyItemPage = async (props: CinematographyItemPageProps) => {
+  const params = await props.params;
+
+  const {
+    slug
+  } = params;
+
   const workQuery = groq`*[_type == "cinematography" && slug.current == $slug][0]`;
 
   const work = (await client.fetch(
